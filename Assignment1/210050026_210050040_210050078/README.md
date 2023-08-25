@@ -5,6 +5,7 @@
 
 ### Q2
 - Report at `2/report/q2_report.pdf`
+- `2/report` also has `graph.jpeg` image associated with the question
 
 ### Q3
 - Report at `3/report/q3_report.pdf`
