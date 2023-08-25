@@ -1,5 +1,11 @@
-im1 = imread("../images/goi1.jpg");
-im2 = imread("../images/goi2.jpg");
+%% MyMainScript
+
+tic;
+%% Your code here
+clear; clc;
+
+im1 = imread("goi1.jpg");   
+im2 = imread("goi2_downsampled.jpg");
 
 im1 = double(im1);
 im2 = double(im2);
@@ -36,7 +42,7 @@ figure;
 imshow((im1_transformed_d / 255));
 title('Image 1 Transformed using Bilinear Interpolation');
 
-
+toc;
 
 function value = bilinearInterpolation(image, x, y)
     x_floor = floor(x);
