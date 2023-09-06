@@ -1,12 +1,12 @@
 %% MyMainScript
 
 %% FOR RUNNING THE CODE AGAIN (WITH SIGMA = 10), 
-%% CHANGE THE VALUE OF variable sd AS REQUIRED ON LINE NUMBER 20
+%% CHANGE THE VALUE OF VARIABLE sd AS REQUIRED ON LINE NUMBER 22
 
-%% sd1 = 5 and sd2 = 10 on line 18 and 19
+%% sd1 = 5 and sd2 = 10 on line 20 and 21
 %% Code runs with sigma for Gaussian Noise stored in variable 'sd' 
 %% I have set sd = sd1, you can change it to sd2 
-%% if you want to run for sigma = 10 on line 20
+%% if you want to run for sigma = 10, on line 22
 
 tic;
 clear; clc;
@@ -43,9 +43,3 @@ for i = 1:3
     hold off;
 end
 toc;
-
-% JUST FOR VERIFYING RESULT USING INBUILT FUNCTION
-% function bf = mybilateralfilter(img, sr, ss)
-%     bf = imbilatfilt(img, sr*sr, ss);
-% end
-

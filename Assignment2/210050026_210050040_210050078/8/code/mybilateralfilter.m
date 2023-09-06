@@ -17,4 +17,3 @@ function bilateral_filter = mybilateralfilter(img, sigma_r, sigma_s)
         end
     end
 end
-
