@@ -1,3 +1,6 @@
+tic;
+clear; clc;
+
 image1 = imread('LC1.png');
 image2 = imread('LC2.jpg');
 
@@ -6,12 +9,12 @@ for i = 1:numel(windowSizes)
     windowSize = windowSizes(i);
     enhancedImage1 = histogram_equalization(image1, windowSize);
     enhancedImage2 = histogram_equalization(image2, windowSize);
-    
+
     figure;
     subplot(1, 2, 1);
     imshow(enhancedImage1);
     title(['Local Enhanced LC1 - Window Size: ' num2str(windowSize)]);
-    
+
     subplot(1, 2, 2);
     imshow(enhancedImage2);
     title(['Local Enhanced LC2 - Window Size: ' num2str(windowSize)]);
@@ -34,6 +37,7 @@ subplot(1, 2, 2);
 imshow(enhancedImage2);
 title('Globally Enhanced LC2');
 
+toc;
 
 function enhancedImage = histogram_equalization(image, windowSize)
     [height, width] = size(image);
@@ -48,6 +52,6 @@ function enhancedImage = histogram_equalization(image, windowSize)
             histogram = imhist(window);
             cdf = cumsum(histogram) / sum(histogram);
             enhancedImage(y,x) = uint8(cdf(intensity+1)* 255) ;  % (L - 1) * cdf(intensity + 1)
-        end
-    end
+       end
+    end
 end
