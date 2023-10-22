@@ -4,10 +4,10 @@
 
 \documentclass[11pt]{article}
 
-\usepackage{amsmath}
+\usepackage{amsmath,xcolor}
 \usepackage{amssymb}
 \usepackage{hyperref}
-\usepackage{ulem}
+\usepackage{soul}
 \usepackage[margin=0.4in]{geometry}
 \begin{document}
 \maketitle
@@ -32,7 +32,8 @@ Repeat the same experiment (using just the \textsf{eig} or \textsf{eigs} routine
 \begin{enumerate}
 \item Prove that the covariance matrix in PCA is symmetric and positive semi-definite.
 \item Prove that the eigenvectors of a symmetric matrix are orthonormal.
-\item Consider a dataset of some $N$ vectors in $d$ dimensions given by $\{\boldsymbol{x_i}\}_{i=1}^d$ with mean vector $\boldsymbol{\bar{x}}$. Suppose that only $k$ eigenvalues of the corresponding covariance matrix are large and the remaining are very small in value. Let $\boldsymbol{\tilde{x}_i}$ be an approximation to $\boldsymbol{x_i}$ of the form $\boldsymbol{\tilde{x}_i} = \boldsymbol{\bar{x}} + \sum_{l=1}^k \boldsymbol{V_l} \alpha_{il}$. Argue why the error $\|\boldsymbol{\tilde{x}_i} - \boldsymbol{x_i}\|^2_2$ will be small. What will be the value of this error in terms of the eigenvalues of the covariance matrix?   
+\item Consider a dataset of some $N$ vectors in $d$ dimensions given by \st{$\{\boldsymbol{x_i}\}_{i=1}^d$} \textcolor{blue}{$\{\boldsymbol{x_i}\}_{i=1}^N$} with mean vector $\boldsymbol{\bar{x}}$. \textcolor{blue}{Note that each $\boldsymbol{x_i} \in \mathbb{R}^d$ and also $\boldsymbol{\bar{x}} \in \mathbb{R}^d$.} 
+Suppose that only $k$ eigenvalues of the corresponding covariance matrix are large and the remaining are very small in value. Let $\boldsymbol{\tilde{x}_i}$ be an approximation to $\boldsymbol{x_i}$ of the form $\boldsymbol{\tilde{x}_i} = \boldsymbol{\bar{x}} + \sum_{l=1}^k \boldsymbol{V_l} \alpha_{il}$ \textcolor{blue}{where $\boldsymbol{V_l}$ stands for the $l$th eigenvector (it has $d$ elements) and $\alpha_{il}$ (it is a scalar) stands for the $l$th eigencoefficient of $\boldsymbol{x_i}$.} Argue why the error \textcolor{blue}{$\frac{1}{N} \sum_{i=1}^N \|\boldsymbol{\tilde{x}_i} - \boldsymbol{x_i}\|^2_2$} will be small. What will be the value of this error in terms of the eigenvalues of the covariance matrix?   
 \item Consider two uncorrelated zero-mean random variables $(X_1, X_2)$. Let $X_1$ belong to a Gaussian distribution with variance 100 and $X_2$ belong to a Gaussian distribution with variance 1. What are the principal components of $(X_1, X_2)$? If the variance of $X_1$ and $X_2$ were equal, what are the principal components? 
 \end{enumerate}
 
