@@ -39,7 +39,7 @@ im2 = myPCADenoising1(im1, sigma);      % im2 = denoised image
 %im2 = mybilateralfilter(im1,15,3);
 
 % Calculating RMSE value
-rmse = norm(im2-im_original)/norm(im_original);
+rmse = norm(im2-im_original, "fro")/norm(im_original, "fro");
 fprintf("RMSE: %f\n", rmse);
     
 % displaying the denoised image
